@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+    $db = mysqli_connect('database-2.cfxou1u9r3ts.us-west-1.rds.amazonaws.com','admin','password','database-2');
+?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -10,6 +13,14 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet">
 </head>
 <body>
+    <?php
+                $query = "SELECT * FROM `USER`;";
+                $result = mysqli_query($db, $query);
+                while($row = mysqli_fetch_assoc($result)) {
+                      echo "test";
+                      echo $row;
+                }
+          ?>
 <div class="form-container">
     <form id="signup-form">
             <h1>Sign up</h1>
